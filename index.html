@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    
+    <!-- SEO Meta Tags -->
+    <title>BCA Farewell 2023-2026 | Our Journey & Memories</title>
+    <meta name="description" content="BCA Farewell 2023-2026 - Relive the beautiful journey of 45 friends, childhood to current memories, college videos, and a special gratitude message. Forever in our hearts.">
+    <meta name="keywords" content="BCA Farewell, BCA 2026, Farewell party, college memories, batch of 2026, BCA graduation, farewell celebration">
+    <meta name="author" content="BCA Batch 2023-2026">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    
+    <!-- Google Search Console Verification (REPLACE WITH YOUR CODE) -->
+    <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE_HERE">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="BCA Farewell 2023-2026 | Our Journey">
+    <meta property="og:description" content="A heartfelt farewell to the BCA batch of 2023-2026. Childhood memories, current transformations, college videos, and a gratitude message.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-username.github.io/BCA-Farewell-2026/">
+    <meta property="og:image" content="https://your-username.github.io/BCA-Farewell-2026/assets/grp-photo.jpeg">
+    <meta property="og:image:alt" content="BCA Farewell Group Photo">
+    <meta property="og:site_name" content="BCA Farewell 2026">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="BCA Farewell 2023-2026">
+    <meta name="twitter:description" content="Celebrating the journey of BCA batch 2023-2026. Watch memories unfold.">
+    <meta name="twitter:image" content="https://your-username.github.io/BCA-Farewell-2026/assets/grp-photo.jpeg">
+    
+    <!-- Canonical URL (update after deployment) -->
+    <link rel="canonical" href="https://your-username.github.io/BCA-Farewell-2026/">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- JSON-LD Structured Data for Rich Snippets -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "BCA Farewell 2023-2026",
+        "description": "A farewell event celebrating the BCA batch of 2023-2026, featuring childhood photos, current photos, college videos, and a gratitude message.",
+        "startDate": "2026-03-27",
+        "endDate": "2026-03-27",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "location": {
+            "@type": "Place",
+            "name": "BCA Department",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "IN"
+            }
+        },
+        "image": "https://your-username.github.io/BCA-Farewell-2026/assets/grp-photo.jpeg",
+        "organizer": {
+            "@type": "Organization",
+            "name": "BCA Batch 2023-2026"
+        }
+    }
+    </script>
+</head>
+<body>
+
+    <!-- Background Video with Overlay -->
+    <video class="bg-video" autoplay loop muted playsinline>
+        <source src="assets/bg/background.mp4" type="video/mp4">
+        <!-- Fallback if video not found -->
+        <source src="https://assets.mixkit.co/videos/preview/mixkit-stars-in-space-1610-large.mp4" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
+
+    <!-- Main Content -->
+    <div class="content-wrapper">
+        <!-- Hero Section with Title -->
+        <section class="hero-section">
+            <div class="container text-center">
+                <h1 class="main-title">BCA Farewell <br><span class="year-span">2023 — 2026</span></h1>
+                <p class="subtitle">A journey of memories, laughter, and friendship</p>
+            </div>
+        </section>
+
+        <!-- Group Photo Section -->
+        <section class="group-photo-section">
+            <div class="container">
+                <h2 class="section-title">Our Family</h2>
+                <div class="group-photo-wrapper">
+                    <img src="assets/grp photo.jpeg" alt="BCA Farewell Group Photo" class="group-photo" id="groupPhoto">
+                </div>
+                <p class="photo-caption">The memories we made will last forever ❤️</p>
+            </div>
+        </section>
+
+        <!-- Childhood Photos Section (Flip Cards will be injected by JS) -->
+        <section class="childhood-section">
+            <div class="container">
+                <h2 class="section-title">Childhood Memories</h2>
+                <p class="section-subtitle">Click on any photo to flip and reveal the latest moment ✨</p>
+                <div class="photo-grid" id="childhoodGrid">
+                    <!-- Flip cards will be generated from friends array in script.js -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Section with iframe Embed (6 videos) -->
+        <section class="video-section">
+            <div class="container">
+                <h2 class="section-title">College Memories</h2>
+                <p class="section-subtitle">Watch our favorite moments (6 videos)</p>
+                <div class="video-carousel-container">
+                    <div class="video-player-wrapper">
+                        <!-- iframe will be used instead of <video> tag -->
+                        <iframe id="mainVideoPlayer" class="main-video-iframe" 
+                                src="https://go.screenpal.com/player/cOfr2BnOuhg?ff=1&ahc=1&dcc=1&tl=1&bg=transparent&share=1&download=1&embed=1&cl=1" 
+                                title="College Memory Video 1" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="video-controls">
+                        <button id="prevVideoBtn" class="video-nav-btn"><i class="bi bi-skip-backward-fill"></i> Previous</button>
+                        <span id="videoCounter" class="video-counter">Video 1 / 6</span>
+                        <button id="nextVideoBtn" class="video-nav-btn">Next <i class="bi bi-skip-forward-fill"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container text-center">
+                <p>BCA Farewell 2023-2026 | Forever in our hearts 🎓</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Modal for Enlarged Latest Photo -->
+    <div id="photoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <img id="modalImage" src="" alt="Latest Photo">
+            <h3 id="modalName"></h3>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+    
+    <!-- Inline script to handle iframe playlist (exactly 6 videos) -->
+    <script>
+        const videoEmbedUrls = [
+            "https://go.screenpal.com/player/cOfr2BnOuhg?ff=1&ahc=1&dcc=1&tl=1&bg=transparent&share=1&download=1&embed=1&cl=1",   // Video 1
+            "https://go.screenpal.com/player/cOfr2BnOuhk?ff=1&ahc=1&dcc=1&tl=1&bg=transparent&share=1&download=1&embed=1&cl=1",   // Video 2
+            "https://go.screenpal.com/player/cOfr2BnOuhC?ff=1&ahc=1&dcc=1&tl=1&bg=transparent&share=1&download=1&embed=1&cl=1",   // Video 3
+            "https://go.screenpal.com/player/cOfr2BnOuhE?ff=1&ahc=1&dcc=1&tl=1&bg=transparent&share=1&download=1&embed=1&cl=1",   // Video 4
+            "https://go.screenpal.com/player/cOfr2BnOuhG?ff=1&ahc=1&dcc=1&tl=1&bg=transparent&share=1&download=1&embed=1&cl=1",   // Video 5
+            "https://go.screenpal.com/player/cOfr2BnOuhm?ff=1&ahc=1&dcc=1&tl=1&bg=transparent&share=1&download=1&embed=1&cl=1"    // Video 6
+        ];
+        
+        let currentVideoIndex = 0;
+        const totalVideos = videoEmbedUrls.length;
+        const iframe = document.getElementById('mainVideoPlayer');
+        const prevBtn = document.getElementById('prevVideoBtn');
+        const nextBtn = document.getElementById('nextVideoBtn');
+        const videoCounter = document.getElementById('videoCounter');
+        
+        function updateVideoPlayer(index) {
+            if (index >= 0 && index < totalVideos) {
+                iframe.src = videoEmbedUrls[index];
+                currentVideoIndex = index;
+                videoCounter.innerText = `Video ${index + 1} / ${totalVideos}`;
+                prevBtn.disabled = (index === 0);
+                nextBtn.disabled = (index === totalVideos - 1);
+            }
+        }
+        
+        prevBtn.addEventListener('click', () => {
+            if (currentVideoIndex > 0) {
+                updateVideoPlayer(currentVideoIndex - 1);
+            }
+        });
+        
+        nextBtn.addEventListener('click', () => {
+            if (currentVideoIndex < totalVideos - 1) {
+                updateVideoPlayer(currentVideoIndex + 1);
+            }
+        });
+        
+        // Initial load
+        updateVideoPlayer(0);
+    </script>
+</body>
+</html>

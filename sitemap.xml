@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+
+    <url>
+        <loc>https://your-username.github.io/BCA-Farewell-2026/</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+
+        <!-- Group Photo Image -->
+        <image:image>
+            <image:loc>https://your-username.github.io/BCA-Farewell-2026/assets/grp-photo.jpeg</image:loc>
+            <image:title>BCA Farewell Group Photo 2023-2026</image:title>
+            <image:caption>Our BCA batch family photo - forever in our hearts</image:caption>
+        </image:image>
+
+        <!-- Representative Childhood & Current Images (sample 5 images each) -->
+        <image:image>
+            <image:loc>https://your-username.github.io/BCA-Farewell-2026/assets/childhood/1.jpg</image:loc>
+            <image:title>Childhood Memory 1</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://your-username.github.io/BCA-Farewell-2026/assets/current/1.jpg</image:loc>
+            <image:title>Current Photo 1</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://your-username.github.io/BCA-Farewell-2026/assets/childhood/10.jpg</image:loc>
+            <image:title>Childhood Memory 10</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://your-username.github.io/BCA-Farewell-2026/assets/current/10.jpg</image:loc>
+            <image:title>Current Photo 10</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://your-username.github.io/BCA-Farewell-2026/assets/childhood/20.jpg</image:loc>
+            <image:title>Childhood Memory 20</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://your-username.github.io/BCA-Farewell-2026/assets/current/20.jpg</image:loc>
+            <image:title>Current Photo 20</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://your-username.github.io/BCA-Farewell-2026/assets/childhood/30.jpg</image:loc>
+            <image:title>Childhood Memory 30</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://your-username.github.io/BCA-Farewell-2026/assets/current/30.jpg</image:loc>
+            <image:title>Current Photo 30</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://your-username.github.io/BCA-Farewell-2026/assets/childhood/40.jpg</image:loc>
+            <image:title>Childhood Memory 40</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://your-username.github.io/BCA-Farewell-2026/assets/current/40.jpg</image:loc>
+            <image:title>Current Photo 40</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://your-username.github.io/BCA-Farewell-2026/assets/childhood/45.jpg</image:loc>
+            <image:title>Childhood Memory 45</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://your-username.github.io/BCA-Farewell-2026/assets/current/45.jpg</image:loc>
+            <image:title>Current Photo 45</image:title>
+        </image:image>
+
+        <!-- Video Entries (10 college videos + 1 gratitude video if exists) -->
+        <video:video>
+            <video:thumbnail_loc>https://your-username.github.io/BCA-Farewell-2026/assets/thumbnails/video1.jpg</video:thumbnail_loc>
+            <video:title>College Memories Video 1</video:title>
+            <video:description>First year highlights - Welcome to BCA</video:description>
+            <video:content_loc>https://your-username.github.io/BCA-Farewell-2026/assets/videos/video1.mp4</video:content_loc>
+            <video:player_loc>https://your-username.github.io/BCA-Farewell-2026/#videos</video:player_loc>
+            <video:duration>120</video:duration>
+            <video:publication_date>2026-04-21</video:publication_date>
+            <video:family_friendly>yes</video:family_friendly>
+            <video:live>no</video:live>
+        </video:video>
+
+        <video:video>
+            <video:thumbnail_loc>https://your-username.github.io/BCA-Farewell-2026/assets/thumbnails/video2.jpg</video:thumbnail_loc>
+            <video:title>College Memories Video 2</video:title>
+            <video:description>Freshers Party and Cultural Events</video:description>
+            <video:content_loc>https://your-username.github.io/BCA-Farewell-2026/assets/videos/video2.mp4</video:content_loc>
+            <video:player_loc>https://your-username.github.io/BCA-Farewell-2026/#videos</video:player_loc>
+            <video:duration>180</video:duration>
+            <video:publication_date>2026-04-21</video:publication_date>
+            <video:family_friendly>yes</video:family_friendly>
+        </video:video>
+
+        <video:video>
+            <video:thumbnail_loc>https://your-username.github.io/BCA-Farewell-2026/assets/thumbnails/video3.jpg</video:thumbnail_loc>
+            <video:title>College Memories Video 3</video:title>
+            <video:description>Sports Day and Outdoor Fun</video:description>
+            <video:content_loc>https://your-username.github.io/BCA-Farewell-2026/assets/videos/video3.mp4</video:content_loc>
+            <video:player_loc>https://your-username.github.io/BCA-Farewell-2026/#videos</video:player_loc>
+            <video:duration>150</video:duration>
+            <video:publication_date>2026-04-21</video:publication_date>
+            <video:family_friendly>yes</video:family_friendly>
+        </video:video>
+
+        <video:video>
+            <video:thumbnail_loc>https://your-username.github.io/BCA-Farewell-2026/assets/thumbnails/video4.jpg</video:thumbnail_loc>
+            <video:title>College Memories Video 4</video:title>
+            <video:description>Academic Achievements and Projects</video:description>
+            <video:content_loc>https://your-username.github.io/BCA-Farewell-2026/assets/videos/video4.mp4</video:content_loc>
+            <video:player_loc>https://your-username.github.io/BCA-Farewell-2026/#videos</video:player_loc>
+            <video:duration>200</video:duration>
+            <video:publication_date>2026-04-21</video:publication_date>
+            <video:family_friendly>yes</video:family_friendly>
+        </video:video>
+
+        <video:video>
+            <video:thumbnail_loc>https://your-username.github.io/BCA-Farewell-2026/assets/thumbnails/video5.jpg</video:thumbnail_loc>
+            <video:title>College Memories Video 5</video:title>
+            <video:description>Friendship Day Celebrations</video:description>
+            <video:content_loc>https://your-username.github.io/BCA-Farewell-2026/assets/videos/video5.mp4</video:content_loc>
+            <video:player_loc>https://your-username.github.io/BCA-Farewell-2026/#videos</video:player_loc>
+            <video:duration>140</video:duration>
+            <video:publication_date>2026-04-21</video:publication_date>
+            <video:family_friendly>yes</video:family_friendly>
+        </video:video>
+
+        <video:video>
+            <video:thumbnail_loc>https://your-username.github.io/BCA-Farewell-2026/assets/thumbnails/video6.jpg</video:thumbnail_loc>
+            <video:title>College Memories Video 6</video:title>
+            <video:description>Second Year Adventures</video:description>
+            <video:content_loc>https://your-username.github.io/BCA-Farewell-2026/assets/videos/video6.mp4</video:content_loc>
+            <video:player_loc>https://your-username.github.io/BCA-Farewell-2026/#videos</video:player_loc>
+            <video:duration>160</video:duration>
+            <video:publication_date>2026-04-21</video:publication_date>
+            <video:family_friendly>yes</video:family_friendly>
+        </video:video>
+
+        <video:video>
+            <video:thumbnail_loc>https://your-username.github.io/BCA-Farewell-2026/assets/thumbnails/video7.jpg</video:thumbnail_loc>
+            <video:title>College Memories Video 7</video:title>
+            <video:description>Final Year Projects and Internships</video:description>
+            <video:content_loc>https://your-username.github.io/BCA-Farewell-2026/assets/videos/video7.mp4</video:content_loc>
+            <video:player_loc>https://your-username.github.io/BCA-Farewell-2026/#videos</video:player_loc>
+            <video:duration>190</video:duration>
+            <video:publication_date>2026-04-21</video:publication_date>
+            <video:family_friendly>yes</video:family_friendly>
+        </video:video>
+
+        <video:video>
+            <video:thumbnail_loc>https://your-username.github.io/BCA-Farewell-2026/assets/thumbnails/video8.jpg</video:thumbnail_loc>
+            <video:title>College Memories Video 8</video:title>
+            <video:description>Farewell Preparations and Emotions</video:description>
+            <video:content_loc>https://your-username.github.io/BCA-Farewell-2026/assets/videos/video8.mp4</video:content_loc>
+            <video:player_loc>https://your-username.github.io/BCA-Farewell-2026/#videos</video:player_loc>
+            <video:duration>220</video:duration>
+            <video:publication_date>2026-04-21</video:publication_date>
+            <video:family_friendly>yes</video:family_friendly>
+        </video:video>
+
+        <video:video>
+            <video:thumbnail_loc>https://your-username.github.io/BCA-Farewell-2026/assets/thumbnails/video9.jpg</video:thumbnail_loc>
+            <video:title>College Memories Video 9</video:title>
+            <video:description>Last Day Memories and Goodbyes</video:description>
+            <video:content_loc>https://your-username.github.io/BCA-Farewell-2026/assets/videos/video9.mp4</video:content_loc>
+            <video:player_loc>https://your-username.github.io/BCA-Farewell-2026/#videos</video:player_loc>
+            <video:duration>180</video:duration>
+            <video:publication_date>2026-04-21</video:publication_date>
+            <video:family_friendly>yes</video:family_friendly>
+        </video:video>
+
+        <video:video>
+            <video:thumbnail_loc>https://your-username.github.io/BCA-Farewell-2026/assets/thumbnails/video10.jpg</video:thumbnail_loc>
+            <video:title>College Memories Video 10</video:title>
+            <video:description>The Grand Farewell Event</video:description>
+            <video:content_loc>https://your-username.github.io/BCA-Farewell-2026/assets/videos/video10.mp4</video:content_loc>
+            <video:player_loc>https://your-username.github.io/BCA-Farewell-2026/#videos</video:player_loc>
+            <video:duration>210</video:duration>
+            <video:publication_date>2026-04-21</video:publication_date>
+            <video:family_friendly>yes</video:family_friendly>
+        </video:video>
+    </url>
+</urlset>
