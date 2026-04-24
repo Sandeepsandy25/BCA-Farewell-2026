@@ -256,7 +256,7 @@ window.addEventListener('scroll', () => {
 });
 
 // ====================================================
-// 6. 3D ROTATING GALLERY (TWO RINGS, CLOUDINARY READY)
+// 6. 3D ROTATING GALLERY – FULLY RESPONSIVE
 // ====================================================
 function create3DGallery() {
     const container = document.getElementById('circleGalleryContainer');
@@ -265,8 +265,7 @@ function create3DGallery() {
         return;
     }
 
-    // ---------- REPLACE THESE WITH YOUR ACTUAL CLOUDINARY URLs ----------
-    // Ring 1 (Batch Moments) – 10 images
+    // ---------- YOUR CLOUDINARY URLs (do not change these) ----------
     const ring1Images = [
         "https://res.cloudinary.com/dahh1ibxe/image/upload/v1777031939/13_tymf5n.jpg",
         "https://res.cloudinary.com/dahh1ibxe/image/upload/v1777031934/15_xmsjlv.jpg",
@@ -280,7 +279,6 @@ function create3DGallery() {
         "https://res.cloudinary.com/dahh1ibxe/image/upload/v1777031930/12_smysqv.jpg"
     ];
 
-    // Ring 2 (Timeless Memories) – 10 images
     const ring2Images = [
         "https://res.cloudinary.com/dahh1ibxe/image/upload/v1777031929/4_dehrx8.jpg",
         "https://res.cloudinary.com/dahh1ibxe/image/upload/v1777031929/6_lzoodf.jpg",
@@ -299,40 +297,64 @@ function create3DGallery() {
         { title: 'Timeless Memories 🌟', images: ring2Images }
     ];
 
-    const baseRadius = 380;      // large radius prevents overlapping
-    let html = '';
+    // ---- Responsive radius based on screen width ----
+    function getRadius() {
+        const width = window.innerWidth;
+        if (width < 576) return 170;      // small phones
+        if (width < 768) return 220;      // large phones
+        if (width < 992) return 280;      // tablets
+        if (width < 1200) return 340;     // small desktops
+        return 400;                       // large desktops
+    }
 
-    rings.forEach(ring => {
-        const count = ring.images.length;
-        const angleStep = 360 / count;
-        let facesHtml = '';
+    function renderGallery() {
+        const baseRadius = getRadius();
+        let html = '';
 
-        ring.images.forEach((imgSrc, idx) => {
-            const angle = angleStep * idx;
-            facesHtml += `
-                <div class="carousel-face" style="transform: rotateY(${angle}deg) translateZ(${baseRadius}px);">
-                    <img src="${imgSrc}" alt="Memory ${idx+1}" loading="lazy" 
-                         onerror="this.src='https://picsum.photos/id/${100 + idx}/300/300'">
+        rings.forEach(ring => {
+            const count = ring.images.length;
+            const angleStep = 360 / count;
+            let facesHtml = '';
+
+            ring.images.forEach((imgSrc, idx) => {
+                const angle = angleStep * idx;
+                // Important: use the current radius for each render
+                facesHtml += `
+                    <div class="carousel-face" style="transform: rotateY(${angle}deg) translateZ(${baseRadius}px);">
+                        <img src="${imgSrc}" alt="Memory ${idx+1}" loading="lazy" 
+                             onerror="this.src='https://picsum.photos/id/${100 + idx}/300/300'">
+                    </div>
+                `;
+            });
+
+            html += `
+                <div class="ring-wrapper">
+                    <div class="ring-title">
+                        <i class="bi bi-camera-reels-fill"></i> ${ring.title}
+                    </div>
+                    <div class="scene3d">
+                        <div class="carousel3d">
+                            ${facesHtml}
+                        </div>
+                    </div>
                 </div>
             `;
         });
 
-        html += `
-            <div class="ring-wrapper">
-                <div class="ring-title">
-                    <i class="bi bi-camera-reels-fill"></i> ${ring.title}
-                </div>
-                <div class="scene3d">
-                    <div class="carousel3d">
-                        ${facesHtml}
-                    </div>
-                </div>
-            </div>
-        `;
-    });
+        container.innerHTML = html;
+        console.log('3D gallery rendered with radius:', baseRadius);
+    }
 
-    container.innerHTML = html;
-    console.log('3D gallery rendered successfully');
+    renderGallery();
+
+    // Re-render gallery on window resize (debounced)
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            renderGallery();
+        }, 150);
+    });
 }
 
 // Execute when DOM is ready
