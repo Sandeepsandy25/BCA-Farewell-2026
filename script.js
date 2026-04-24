@@ -147,24 +147,17 @@ const friends = [
         childhoodImg: "assets/childhood/vyshu childhood.jpg",
         latestImg: "assets/current/vyshu current.jpg"
     }
-    // Add your remaining 17 friends here following the same pattern
 ];
 
 // ====================================================
-// 2. GENERATE FLIP CARDS FROM THE ARRAY
+// 2. GENERATE FLIP CARDS
 // ====================================================
 const childhoodGrid = document.getElementById('childhoodGrid');
 if (childhoodGrid) {
-    childhoodGrid.innerHTML = ''; // Clear placeholder
-
+    childhoodGrid.innerHTML = '';
     friends.forEach((friend, index) => {
         const flipCard = document.createElement('div');
         flipCard.className = 'flip-card';
-        flipCard.setAttribute('data-index', index);
-        flipCard.setAttribute('data-name', friend.name);
-        flipCard.setAttribute('data-latest-img', friend.latestImg);
-
-        // Build card HTML
         flipCard.innerHTML = `
             <div class="flip-card-inner">
                 <div class="flip-front">
@@ -178,12 +171,9 @@ if (childhoodGrid) {
                 </div>
             </div>
         `;
-
-        // Click event: flip + open modal
         flipCard.addEventListener('click', (e) => {
             e.stopPropagation();
             flipCard.classList.toggle('flipped');
-            // Open modal with latest photo and name
             const modal = document.getElementById('photoModal');
             const modalImg = document.getElementById('modalImage');
             const modalName = document.getElementById('modalName');
@@ -191,45 +181,35 @@ if (childhoodGrid) {
             modalName.textContent = friend.name;
             modal.classList.add('show');
         });
-
         childhoodGrid.appendChild(flipCard);
     });
 }
 
 // ====================================================
-// 3. MODAL FUNCTIONALITY
+// 3. MODAL
 // ====================================================
 const modal = document.getElementById('photoModal');
 const closeModalBtn = document.querySelector('.close-modal');
-
-function closeModal() {
-    modal.classList.remove('show');
-}
-
+function closeModal() { modal.classList.remove('show'); }
 closeModalBtn.addEventListener('click', closeModal);
-modal.addEventListener('click', (e) => {
-    if (e.target === modal) closeModal();
-});
+modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
 
 // ====================================================
-// 4. VIDEO SECTION (iframe playlist – replace with your embed URLs)
+// 4. VIDEO PLAYLIST
 // ====================================================
-// REPLACE THESE 10 URLs WITH YOUR SCREENPAL / YOUTUBE EMBED LINKS
 const videoEmbedUrls = [
-    "https://go.screenpal.com/player/cOfr2BnOuhg?ff=1&ahc=1&dcc=1&tl=1&bg=transparent&share=1&download=1&embed=1&cl=1",   // Video 1
-    "https://go.screenpal.com/player/cOfr2BnOuhk?ff=1&ahc=1&dcc=1&tl=1&bg=transparent&share=1&download=1&embed=1&cl=1",   // Video 2
-    "https://go.screenpal.com/player/cOfr2BnOuhC?ff=1&ahc=1&dcc=1&tl=1&bg=transparent&share=1&download=1&embed=1&cl=1",   // Video 3
-    "https://go.screenpal.com/player/cOfr2BnOuhE?ff=1&ahc=1&dcc=1&tl=1&bg=transparent&share=1&download=1&embed=1&cl=1",   // Video 4
-    "https://go.screenpal.com/player/cOfr2BnOuhG?ff=1&ahc=1&dcc=1&tl=1&bg=transparent&share=1&download=1&embed=1&cl=1",   // Video 5
-    "https://go.screenpal.com/player/cOfr2BnOuhm?ff=1&ahc=1&dcc=1&tl=1&bg=transparent&share=1&download=1&embed=1&cl=1"    // Video 6
-        ];
-
+    "https://go.screenpal.com/player/cOfr2BnOuhg?ff=1&ahc=1&dcc=1&tl=1&bg=transparent&share=1&download=1&embed=1&cl=1",
+    "https://go.screenpal.com/player/cOfr2BnOuhk?ff=1&ahc=1&dcc=1&tl=1&bg=transparent&share=1&download=1&embed=1&cl=1",
+    "https://go.screenpal.com/player/cOfr2BnOuhC?ff=1&ahc=1&dcc=1&tl=1&bg=transparent&share=1&download=1&embed=1&cl=1",
+    "https://go.screenpal.com/player/cOfr2BnOuhE?ff=1&ahc=1&dcc=1&tl=1&bg=transparent&share=1&download=1&embed=1&cl=1",
+    "https://go.screenpal.com/player/cOfr2BnOuhG?ff=1&ahc=1&dcc=1&tl=1&bg=transparent&share=1&download=1&embed=1&cl=1",
+    "https://go.screenpal.com/player/cOfr2BnOuhm?ff=1&ahc=1&dcc=1&tl=1&bg=transparent&share=1&download=1&embed=1&cl=1"
+];
 let currentVideoIndex = 0;
 const iframe = document.getElementById('mainVideoPlayer');
 const prevBtn = document.getElementById('prevVideoBtn');
 const nextBtn = document.getElementById('nextVideoBtn');
 const videoCounterSpan = document.getElementById('videoCounter');
-
 function updateVideoPlayer(index) {
     if (!iframe) return;
     if (index >= 0 && index < videoEmbedUrls.length) {
@@ -240,49 +220,32 @@ function updateVideoPlayer(index) {
         nextBtn.disabled = (index === videoEmbedUrls.length - 1);
     }
 }
-
 if (prevBtn && nextBtn) {
-    prevBtn.addEventListener('click', () => {
-        if (currentVideoIndex > 0) {
-            updateVideoPlayer(currentVideoIndex - 1);
-        }
-    });
-    nextBtn.addEventListener('click', () => {
-        if (currentVideoIndex < videoEmbedUrls.length - 1) {
-            updateVideoPlayer(currentVideoIndex + 1);
-        }
-    });
+    prevBtn.addEventListener('click', () => { if (currentVideoIndex > 0) updateVideoPlayer(currentVideoIndex - 1); });
+    nextBtn.addEventListener('click', () => { if (currentVideoIndex < videoEmbedUrls.length - 1) updateVideoPlayer(currentVideoIndex + 1); });
 }
 updateVideoPlayer(0);
 
 // ====================================================
-// 5. GROUP PHOTO & BACKGROUND VIDEO HANDLING
+// 5. GROUP PHOTO & BG VIDEO
 // ====================================================
 const groupImg = document.getElementById('groupPhoto');
 if (groupImg) {
-    groupImg.onerror = function() {
-        this.src = "https://picsum.photos/id/104/800/500";
-        this.alt = "Group Photo Placeholder";
-    };
+    groupImg.onerror = function() { this.src = "https://picsum.photos/id/104/800/500"; };
     groupImg.addEventListener('click', () => {
         groupImg.style.transform = 'scale(1.02)';
         setTimeout(() => { groupImg.style.transform = ''; }, 300);
     });
 }
-
-// Background video fallback
 const bgVideo = document.querySelector('.bg-video');
 if (bgVideo) {
     bgVideo.onerror = function() {
-        console.log("Background video not loading, using fallback...");
         if (!bgVideo.src.includes('mixkit')) {
             bgVideo.src = "https://assets.mixkit.co/videos/preview/mixkit-stars-in-space-1610-large.mp4";
             bgVideo.load();
         }
     };
 }
-
-// Scroll effect on overlay (optional)
 window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
     const overlay = document.querySelector('.overlay');
@@ -291,5 +254,92 @@ window.addEventListener('scroll', () => {
         overlay.style.background = `radial-gradient(circle at center, rgba(0,0,0,0.4) 0%, rgba(0,0,0,${intensity}) 100%)`;
     }
 });
+
+// ====================================================
+// 6. 3D ROTATING GALLERY (TWO RINGS, CLOUDINARY READY)
+// ====================================================
+function create3DGallery() {
+    const container = document.getElementById('circleGalleryContainer');
+    if (!container) {
+        console.warn('circleGalleryContainer not found');
+        return;
+    }
+
+    // ---------- REPLACE THESE WITH YOUR ACTUAL CLOUDINARY URLs ----------
+    // Ring 1 (Batch Moments) – 10 images
+    const ring1Images = [
+        "https://res.cloudinary.com/dahh1ibxe/image/upload/v1777031939/13_tymf5n.jpg",
+        "https://res.cloudinary.com/dahh1ibxe/image/upload/v1777031934/15_xmsjlv.jpg",
+        "https://res.cloudinary.com/dahh1ibxe/image/upload/v1777031934/17_mnvwar.jpg",
+        "https://res.cloudinary.com/dahh1ibxe/image/upload/v1777031933/18_djue0r.jpg",
+        "https://res.cloudinary.com/dahh1ibxe/image/upload/v1777031933/14_xp89ex.jpg",
+        "https://res.cloudinary.com/dahh1ibxe/image/upload/v1777031932/10_ydl4xz.jpg",
+        "https://res.cloudinary.com/dahh1ibxe/image/upload/v1777031932/16_pfnbo4.jpg",
+        "https://res.cloudinary.com/dahh1ibxe/image/upload/v1777031931/11_h93bss.jpg",
+        "https://res.cloudinary.com/dahh1ibxe/image/upload/v1777031930/9_vigy8d.jpg",
+        "https://res.cloudinary.com/dahh1ibxe/image/upload/v1777031930/12_smysqv.jpg"
+    ];
+
+    // Ring 2 (Timeless Memories) – 10 images
+    const ring2Images = [
+        "https://res.cloudinary.com/dahh1ibxe/image/upload/v1777031929/4_dehrx8.jpg",
+        "https://res.cloudinary.com/dahh1ibxe/image/upload/v1777031929/6_lzoodf.jpg",
+        "https://res.cloudinary.com/dahh1ibxe/image/upload/v1777031929/8_hzrpmf.jpg",
+        "https://res.cloudinary.com/dahh1ibxe/image/upload/v1777031928/7_z2pr75.jpg",
+        "https://res.cloudinary.com/dahh1ibxe/image/upload/v1777031927/1_l98npt.jpg",
+        "https://res.cloudinary.com/dahh1ibxe/image/upload/v1777031926/5_ttnnhq.jpg",
+        "https://res.cloudinary.com/dahh1ibxe/image/upload/v1777031925/2_akrxbo.jpg",
+        "https://res.cloudinary.com/dahh1ibxe/image/upload/v1777031926/3_v9e9wv.jpg",
+        "https://res.cloudinary.com/dahh1ibxe/image/upload/v1777031925/20_ph7yja.jpg",
+        "https://res.cloudinary.com/dahh1ibxe/image/upload/v1777033027/20_xdezz5.jpg"
+    ];
+
+    const rings = [
+        { title: 'Batch Moments ✨', images: ring1Images },
+        { title: 'Timeless Memories 🌟', images: ring2Images }
+    ];
+
+    const baseRadius = 380;      // large radius prevents overlapping
+    let html = '';
+
+    rings.forEach(ring => {
+        const count = ring.images.length;
+        const angleStep = 360 / count;
+        let facesHtml = '';
+
+        ring.images.forEach((imgSrc, idx) => {
+            const angle = angleStep * idx;
+            facesHtml += `
+                <div class="carousel-face" style="transform: rotateY(${angle}deg) translateZ(${baseRadius}px);">
+                    <img src="${imgSrc}" alt="Memory ${idx+1}" loading="lazy" 
+                         onerror="this.src='https://picsum.photos/id/${100 + idx}/300/300'">
+                </div>
+            `;
+        });
+
+        html += `
+            <div class="ring-wrapper">
+                <div class="ring-title">
+                    <i class="bi bi-camera-reels-fill"></i> ${ring.title}
+                </div>
+                <div class="scene3d">
+                    <div class="carousel3d">
+                        ${facesHtml}
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+
+    container.innerHTML = html;
+    console.log('3D gallery rendered successfully');
+}
+
+// Execute when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', create3DGallery);
+} else {
+    create3DGallery();
+}
 
 console.log("BCA Farewell Website Loaded — Custom friend list ready!");
