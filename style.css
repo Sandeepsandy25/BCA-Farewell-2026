@@ -455,43 +455,43 @@ section {
     font-size: 0.9rem;
     color: #aaa;
 }
-/* ========== 3D ROTATING GALLERY – TWO RINGS, LARGER SPACING ========== */
+/* ========== 3D ROTATING GALLERY – FULLY RESPONSIVE ========== */
 .circle-gallery-section {
     background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(4px);
-    padding: 80px 0;
-    overflow: visible;
+    padding: 60px 0;
+    overflow-x: hidden;
 }
 
-/* Each ring wrapper – centered, with ample margin */
+/* Each ring wrapper – centered, with responsive margins */
 .ring-wrapper {
-    margin: 80px auto;
-    max-width: 900px;
+    margin: 40px auto;
+    max-width: 100%;
     text-align: center;
     overflow: visible;
 }
 
 .ring-title {
-    font-size: 2rem;
+    font-size: clamp(1.3rem, 5vw, 2rem);
     font-weight: 600;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     color: #ffd966;
-    text-shadow: 0 0 8px rgba(0,0,0,0.6);
     display: inline-flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     background: rgba(0,0,0,0.5);
-    padding: 10px 28px;
+    padding: 6px 18px;
     border-radius: 60px;
     backdrop-filter: blur(4px);
+    white-space: nowrap;
 }
 
-/* 3D scene – larger perspective, no hidden overflow */
+/* 3D scene – width based on viewport */
 .scene3d {
-    width: 100%;
-    max-width: 800px;
+    width: 80vw;
+    max-width: 500px;
     margin: 0 auto;
-    perspective: 1400px;
+    perspective: 1000px;
     aspect-ratio: 1 / 1;
     overflow: visible;
 }
@@ -505,20 +505,20 @@ section {
     overflow: visible;
 }
 
-/* Individual image face – bigger, with spacing */
+/* Face size – scales with screen */
 .carousel-face {
     position: absolute;
-    width: 220px;
-    height: 220px;
+    width: min(30vw, 160px);
+    height: min(30vw, 160px);
     top: 50%;
     left: 50%;
-    margin-left: -110px;
-    margin-top: -110px;
-    border-radius: 24px;
+    margin-left: calc(min(30vw, 160px) / -2);
+    margin-top: calc(min(30vw, 160px) / -2);
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-    border: 3px solid rgba(255, 215, 0, 0.9);
-    transition: transform 0.3s ease, box-shadow 0.2s;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+    border: 2px solid rgba(255, 215, 0, 0.9);
+    transition: transform 0.3s ease;
     background: #1a1a2e;
 }
 
@@ -526,94 +526,44 @@ section {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
 }
 
-/* Hover zoom + glow */
 .carousel-face:hover {
-    transform: scale(1.12);
+    transform: scale(1.1);
     border-color: #ffaa44;
-    box-shadow: 0 0 40px rgba(255,170,68,0.9);
     z-index: 10;
 }
 
-/* Rotation keyframes */
 @keyframes rotateRing {
     from { transform: rotateY(0deg); }
     to { transform: rotateY(360deg); }
 }
 
-/* Large screens – even bigger */
-@media (min-width: 1200px) {
+/* Tablet & desktop improvements */
+@media (min-width: 768px) {
     .carousel-face {
-        width: 260px;
-        height: 260px;
-        margin-left: -130px;
-        margin-top: -130px;
+        width: 150px;
+        height: 150px;
+        margin-left: -75px;
+        margin-top: -75px;
     }
     .scene3d {
-        max-width: 900px;
-    }
-}
-
-/* Desktop */
-@media (min-width: 992px) and (max-width: 1199px) {
-    .carousel-face {
-        width: 220px;
-        height: 220px;
-        margin-left: -110px;
-        margin-top: -110px;
-    }
-    .scene3d {
-        max-width: 800px;
-    }
-}
-
-/* Tablet */
-@media (max-width: 991px) {
-    .carousel-face {
-        width: 170px;
-        height: 170px;
-        margin-left: -85px;
-        margin-top: -85px;
-    }
-    .scene3d {
-        max-width: 650px;
-    }
-    .ring-title {
-        font-size: 1.7rem;
-    }
-}
-
-/* Mobile landscape */
-@media (max-width: 768px) {
-    .carousel-face {
-        width: 140px;
-        height: 140px;
-        margin-left: -70px;
-        margin-top: -70px;
-    }
-    .scene3d {
-        max-width: 500px;
+        width: 500px;
     }
     .ring-wrapper {
         margin: 60px auto;
     }
 }
 
-/* Mobile portrait */
-@media (max-width: 576px) {
+@media (min-width: 1024px) {
     .carousel-face {
-        width: 110px;
-        height: 110px;
-        margin-left: -55px;
-        margin-top: -55px;
+        width: 180px;
+        height: 180px;
+        margin-left: -90px;
+        margin-top: -90px;
     }
     .scene3d {
-        max-width: 380px;
+        width: 600px;
     }
-    .ring-title {
-        font-size: 1.3rem;
-        padding: 6px 18px;
-    }
+}
 }
